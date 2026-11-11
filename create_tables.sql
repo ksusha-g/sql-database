@@ -187,7 +187,7 @@ CREATE TABLE mutagen_upgrade ( -- справочник: какие апгрей�
     upgrade_id int NOT NULL REFERENCES upgrade(id),
     mutagen_effect_id int NOT NULL REFERENCES mutagen_effect(id),
     max_level  smallint NOT NULL DEFAULT 1
-    CHECK (max_level BETWEEN 1 AND 5),
+    	CHECK (max_level BETWEEN 1 AND 5),
     PRIMARY KEY (mutagen_id, upgrade_id, mutagen_effect_id)
 );
 
@@ -196,7 +196,8 @@ CREATE TABLE player_mutagen_upgrade (
     mutagen_id int NOT NULL,
     upgrade_id int NOT NULL,
     mutagen_effect_id int NOT NULL,
-    level smallint NOT NULL CHECK (level >= 1),
+    level smallint NOT NULL 
+		CHECK (level >= 1),
     PRIMARY KEY (player_id, mutagen_id, upgrade_id, mutagen_effect_id),
     FOREIGN KEY (mutagen_id, upgrade_id, mutagen_effect_id)
         REFERENCES mutagen_upgrade(mutagen_id, upgrade_id, mutagen_effect_id), -- т.к. составной ключ
