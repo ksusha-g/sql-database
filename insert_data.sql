@@ -21,7 +21,7 @@ INSERT INTO resource(planet_id, name, description, type, extraction_time) VALUES
 INSERT INTO resource(planet_id, name, description, type, extraction_time) VALUES (4, 'dry moss', 'text', 'food', 5);
 INSERT INTO resource(planet_id, name, description, type, extraction_time) VALUES (4, 'ugly stone', 'text', 'upgrade_material', 10);
 
-INSERT INTO inventory(player_id, resource_id, planet_id, count) VALUES (1, 2, 1, 10)
+INSERT INTO inventory(player_id, resource_id, planet_id, count) VALUES (1, 2, 1, 10);
 INSERT INTO inventory(player_id, resource_id, planet_id, count) VALUES (1, 1, 1, 5);
 INSERT INTO inventory(player_id, resource_id, planet_id, count) VALUES (2, 3, 2, 1);
 INSERT INTO inventory(player_id, resource_id, planet_id, count) VALUES (2, 4, 2, 3);
@@ -106,10 +106,10 @@ select * from resource;
 select * from inventory;
 select * from player_species;
 
-delete from planet;
+delete from resource;
 
 ----ВАЖНО НЕ УДАЛЯТЬ. обнуляет счетчик serial
-alter sequence player_id_seq restart with 1; 
+alter sequence resource_id_seq restart with 1; 
 
 
 
